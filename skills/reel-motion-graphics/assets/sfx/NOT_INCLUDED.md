@@ -1,0 +1,1 @@
+The .mp3 files are not published: the Pixabay licence does not allow redistributing the sounds as standalone files. Download each one listed in CREDITS.md from https://pixabay.com/sound-effects/ and save it here under the same name.

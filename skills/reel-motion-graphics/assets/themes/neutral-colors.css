@@ -1,0 +1,68 @@
+/* NEUTRAL COLORS — soft, airy, "Apple notes" creator look (reference: igexport-Det1_bgydPz).
+   Loaded after style.css when cards.py sets THEME = 'neutral-colors'. Overlays sit directly on the
+   footage: white text with a soft shadow, warm gold italic-serif keywords, white iOS-style cards,
+   butter-yellow circle wipes, twinkling sparkles. No dark panels. */
+:root {
+  --n-white: #ffffff;
+  --n-ink: #1d1d1f;
+  --n-grey: #8a8a8e;
+  --n-gold: #f1d77a;        /* italic-serif keywords: "Claude Code", "Steal Like Artists" */
+  --n-butter: #f2df78;      /* circle wipe + sticker pill */
+  --n-cream: #f7f2e8;       /* window/document cards */
+}
+.n-shadow, .n-title, .n-step, .n-kick { text-shadow: 0 2px 14px rgba(0,0,0,.35), 0 1px 3px rgba(0,0,0,.25); }
+
+/* opening lockup: "My Claude Edits / SYSTEM" */
+.n-title { left: 0; width: 1080px; text-align: center; color: var(--n-white); }
+.n-title .big { font-family: "Instrument Serif", "Noto Serif SC", serif; font-size: 118px; line-height: 1; }
+.n-title .big em { font-style: italic; color: var(--n-gold); }
+.n-title .caps { font-family: "Inter Tight", "Noto Sans SC", sans-serif; font-weight: 600; font-size: 34px; letter-spacing: .5em; margin-top: 8px; }
+.n-title .zh { font-family: "Noto Serif SC", serif; font-weight: 600; font-size: 40px; letter-spacing: .12em; opacity: .95; }
+
+/* section header: "Step 1:  Claude Code" with a twinkling sparkle row above */
+.n-step { left: 0; width: 1080px; text-align: center; color: var(--n-white); }
+.n-step .lbl { font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 46px; vertical-align: middle; }
+.n-step .ttl { font-family: "Instrument Serif", serif; font-style: italic; font-size: 92px; color: var(--n-gold); vertical-align: middle; margin-left: 10px; }
+.n-step .zh { display: block; font-family: "Noto Serif SC", serif; font-weight: 600; font-size: 38px; letter-spacing: .12em; margin-top: 4px; }
+.sparkles { left: 0; width: 1080px; text-align: center; height: 40px; }
+.sparkles i { display: inline-block; width: 18px; height: 18px; margin: 0 14px; background: var(--n-white);
+  clip-path: polygon(50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50%, 40% 40%); filter: drop-shadow(0 0 6px rgba(255,255,255,.9)); }
+.sparkles i:nth-child(2n) { width: 10px; height: 10px; }
+
+/* small kicker over footage */
+.n-kick { left: 0; width: 1080px; text-align: center; color: var(--n-white); font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 40px; }
+.n-kick em { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; color: var(--n-gold); font-size: 1.25em; }
+
+/* sticker pill: "5 Steps → No Course" */
+.n-pill { padding: 14px 30px; border-radius: 22px; background: var(--n-butter); color: var(--n-ink); font-family: "Inter Tight", sans-serif;
+  font-weight: 800; font-size: 50px; box-shadow: 0 10px 24px rgba(0,0,0,.25); transform: rotate(-3deg); white-space: nowrap; }
+.n-pill .zh { display: block; font-size: 26px; font-weight: 700; opacity: .75; }
+
+/* white iOS card (comments / follow / list / tools) */
+.n-card { background: var(--n-white); color: var(--n-ink); border-radius: 30px; padding: 26px 30px; box-shadow: 0 22px 54px rgba(0,0,0,.22); font-family: "Inter Tight", "Noto Sans SC", sans-serif; }
+.n-card .hd { font-weight: 700; font-size: 30px; text-align: center; margin-bottom: 14px; }
+.n-card .hd em { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; color: #b8962e; font-size: 1.3em; }
+.n-card .zh { display: block; font-size: .7em; color: var(--n-grey); font-weight: 500; }
+.n-row { display: flex; align-items: center; gap: 18px; font-size: 34px; font-weight: 600; padding: 10px 0; border-top: 1px solid #eee; }
+.n-row:first-of-type { border-top: 0; }
+.n-input { display: flex; align-items: center; gap: 14px; margin-top: 10px; padding: 14px 18px; border-radius: 99px; background: #f2f2f4; font-size: 30px; color: var(--n-ink); }
+.n-input .send { margin-left: auto; width: 48px; height: 48px; border-radius: 50%; background: #2f7cf6; color: #fff; display: grid; place-items: center; font-size: 26px; }
+
+/* document / window card (Notes, style menu) */
+.n-doc { background: var(--n-cream); color: var(--n-ink); border-radius: 26px; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,.28); font-family: "Inter Tight", "Noto Sans SC", sans-serif; }
+.n-doc .bar { height: 46px; display: flex; align-items: center; gap: 9px; padding: 0 18px; background: rgba(0,0,0,.04); font-size: 20px; color: var(--n-grey); }
+.n-doc .bar b { width: 13px; height: 13px; border-radius: 50%; background: #d9d4c7; }
+.n-doc .body { padding: 22px 28px 28px; }
+.n-doc h3 { font-size: 40px; font-weight: 800; margin-bottom: 10px; }
+
+/* floating thumbnail collage around her (her own past covers/screenshots, passed in as <img>) */
+.n-thumb { width: 230px; border-radius: 22px; overflow: hidden; border: 5px solid #fff; box-shadow: 0 18px 40px rgba(0,0,0,.3); background: #ddd; }
+.n-thumb img { display: block; width: 100%; }
+
+/* full-frame butter-yellow circle wipe (helpers: iris()) */
+.n-iris { left: 0; top: 0; width: 1080px; height: 1920px; background: var(--n-butter); clip-path: circle(0% at 50% 50%); }
+
+/* dark interlude card ("Raw Clip / Option A·B·C") */
+.n-dark { left: 0; top: 0; width: 1080px; height: 1920px; background: #0d0d0f; }
+.n-dark .lab { position: absolute; left: 0; width: 1080px; text-align: center; color: #fff; font-family: "Inter Tight", sans-serif; font-weight: 600; font-size: 44px; }
+.n-dark .lab em { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; color: var(--n-gold); font-size: 1.3em; }

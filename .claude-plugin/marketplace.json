@@ -1,0 +1,7 @@
+{
+  "name": "reel-motion-graphics",
+  "owner": { "name": "Ella" },
+  "plugins": [
+    { "name": "reel-motion-graphics", "source": "./", "description": "Reel-style bilingual EN/中文 motion graphics and sound design for talking-head videos, in three aesthetics (green oasis, neutral colors, classic calligraphy), rendered with HyperFrames." }
+  ]
+}

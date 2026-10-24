@@ -1,0 +1,42 @@
+/* CLASSIC CALLIGRAPHY — quiet, editorial, handwritten (reference: igexport-Derd9IvoWaj, "Think Like An Editor").
+   Loaded after style.css when cards.py sets THEME = 'classic-calligraphy'. Almost no UI: one script-lockup
+   title over the footage, and "handwritten notebook" inserts that stand in for the reel's overhead
+   pen-on-paper B-roll. No panels, no pops, no bounces: things fade and get written on. */
+:root {
+  --c-white: #fbf8f2;
+  --c-paper: #f6f1df;       /* notebook page */
+  --c-line: rgba(70, 90, 140, .18);
+  --c-ink: #1a1a1a;         /* marker ink */
+  --c-red: #b3261e;         /* the one accent: red nails / a crossed-out word */
+  --c-desk: #4a2a1a;        /* walnut desk behind the notebook */
+}
+
+/* title lockup: THINK LIKE / An Editor / PART ONE — thin caps serif around a big white script word */
+.c-lockup { left: 0; width: 1080px; text-align: center; color: var(--c-white); text-shadow: 0 2px 18px rgba(0,0,0,.28); }
+.c-lockup .caps { font-family: "Cormorant Garamond", "Noto Serif SC", serif; font-weight: 500; font-size: 44px; letter-spacing: .14em; text-transform: uppercase; }
+.c-lockup .script { font-family: "Pinyon Script", "Ma Shan Zheng", cursive; font-size: 150px; line-height: 1.05; margin: -4px 0 -8px; white-space: nowrap; }
+.c-lockup .zh { display: block; font-family: "Ma Shan Zheng", "Noto Serif SC", serif; font-size: 64px; letter-spacing: .08em; margin-top: 8px; }
+
+/* small lower-third in the same voice */
+.c-lower { left: 60px; width: 840px; color: var(--c-white); text-shadow: 0 2px 14px rgba(0,0,0,.35); }
+.c-lower .caps { font-family: "Cormorant Garamond", serif; font-weight: 600; font-size: 30px; letter-spacing: .18em; text-transform: uppercase; }
+.c-lower .script { font-family: "Pinyon Script", cursive; font-size: 96px; line-height: 1; }
+.c-lower .zh { font-family: "Ma Shan Zheng", serif; font-size: 44px; }
+
+/* notebook insert: full-frame walnut desk + open spiral notebook, handwriting written on line by line */
+.c-desk { left: 0; top: 0; width: 1080px; height: 1920px; background: radial-gradient(ellipse at 50% 45%, #6a3d24 0%, var(--c-desk) 60%, #2c170c 100%); }
+.c-book { left: 90px; top: 430px; width: 900px; height: 1060px; display: flex; gap: 0; filter: drop-shadow(0 30px 50px rgba(0,0,0,.45)); }
+.c-page { position: relative; flex: 1; background: var(--c-paper);
+  background-image: repeating-linear-gradient(transparent 0 63px, var(--c-line) 63px 65px); padding: 70px 40px 40px 46px; }
+.c-page:first-child { border-radius: 10px 0 0 10px; }
+.c-page:last-child { border-radius: 0 10px 10px 0; }
+.c-spiral { position: relative; width: 22px; background: repeating-linear-gradient(#333 0 6px, transparent 6px 22px); }
+.c-hand { display: block; font-family: "Kalam", "Long Cang", cursive; font-weight: 400; font-size: 54px; line-height: 65px; color: var(--c-ink); white-space: nowrap; }
+.c-hand.zh { font-family: "Long Cang", "Kalam", cursive; font-size: 48px; color: #3b3b3b; }
+.c-hand.big { font-size: 84px; line-height: 130px; }
+.c-hand.red { color: var(--c-red); }
+.c-strike { position: absolute; height: 5px; background: var(--c-ink); border-radius: 3px; transform-origin: left center; transform: scaleX(0); }
+
+/* tiny editorial captions (if a video needs any on-screen words besides the notebook) */
+.c-note { left: 0; width: 1080px; text-align: center; color: var(--c-white); font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 56px; text-shadow: 0 2px 14px rgba(0,0,0,.35); }
+.c-note .zh { display: block; font-family: "Noto Serif SC", serif; font-style: normal; font-size: 36px; }
