@@ -13,7 +13,7 @@ Three aesthetics:
 In Claude Code:
 
 ```
-/plugin marketplace add <your-github-username>/reel-motion-graphics
+/plugin marketplace add ellawzhu/reel-motion-graphics
 /plugin install reel-motion-graphics@reel-motion-graphics
 ```
 
